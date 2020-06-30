@@ -97,7 +97,7 @@ class ConfigurationManipulatorBase(with_metaclass(abc.ABCMeta, object)):
     """
     Write cfg to filename.  Guess the format by extension if one is not given.
     """
-    with open(filename, 'wb') as fd:
+    with open(filename, 'w') as fd:
       self._get_serializer(filename, format).dump(cfg, fd)
 
   def load_from_file(self, filename, format=None):
